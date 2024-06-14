@@ -1,6 +1,6 @@
 <?php
     // Inclusion du fichier de connexion à la base de données (assurez-vous que cela récupère $pdo)
-    require_once("../connection/connection.php");
+    
 
     // Vérifier si l'ID de l'utilisateur est défini dans la requête GET et est un entier
     if (isset($_GET['user_id']) && ctype_digit($_GET['user_id'])) 

@@ -1,6 +1,6 @@
 <?php
     // Inclure le fichier de connexion à la base de données
-    require_once("../connection/connection.php");
+    
 
     // Vérifier si la requête est de type POST et si la variable POST 'participer' est définie
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['participer'])) 

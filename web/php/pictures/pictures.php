@@ -1,6 +1,6 @@
 <?php
     require_once("../header-footer/header.php");
-    require_once("../connection/connection.php");
+    
 
     // Récupérer tous les fichiers image du dossier
     $directoryPath = '../../images/uploads/';

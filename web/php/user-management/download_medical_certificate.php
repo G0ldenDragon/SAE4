@@ -1,5 +1,5 @@
 <?php
-    require_once("../connection/connection.php");
+    
 
     // Assurez-vous que l'utilisateur est autorisé à accéder à ce fichier
     if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin'] || $_SESSION['admin'] != 1) 

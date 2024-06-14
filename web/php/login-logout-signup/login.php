@@ -1,5 +1,7 @@
 <?php
-    require_once("../header-footer/header.php");
+    // Inclure le fichier de connexion à la base de données
+    session_start();
+    require_once("../connection/connection.php");
 
     // Vérifier si les données ont été soumises
     if ($_SERVER["REQUEST_METHOD"] == "POST") 

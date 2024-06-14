@@ -1,6 +1,6 @@
 <?php
     require_once("../header-footer/header.php");
-    require_once("../connection/connection.php"); // Ce fichier doit retourner l'objet PDO $pdo
+     // Ce fichier doit retourner l'objet PDO $pdo
 
     // Vérifier si l'utilisateur est connecté, sinon rediriger vers la page de connexion
     if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) 

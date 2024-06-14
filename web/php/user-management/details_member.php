@@ -2,7 +2,7 @@
     // pour gérer les sessions utilisateur
 
     // Inclure le fichier de connexion à la base de données
-    require_once("../connection/connection.php");
+    
 
     // Inclure le fichier d'en-tête du site
     require_once("../header-footer/header.php");

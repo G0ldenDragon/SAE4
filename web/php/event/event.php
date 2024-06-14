@@ -1,6 +1,6 @@
 <?php
     // Inclure le fichier de connexion à la base de données
-    require_once("../connection/connection.php");
+    
 
     // Inclure l'en-tête de la page
     require_once("../header-footer/header.php");
