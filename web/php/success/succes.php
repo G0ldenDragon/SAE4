@@ -1,4 +1,6 @@
 <?php
+    require_once("../header-footer/header.php");
+    
     if (!isset($_SESSION['success_message'])) 
     {
         header('Location: ../index/index.php');

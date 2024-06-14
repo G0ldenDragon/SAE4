@@ -1,6 +1,4 @@
 <?php
-    // Inclure le fichier de connexion à la base de données
-    require_once '../connection/connection.php';
 
     // Inclure le fichier d'en-tête
     require_once("../header-footer/header.php");
@@ -85,7 +83,7 @@
     LEFT JOIN 
         user u ON uhc.User_user_id = u.user_id
     WHERE 
-        c.date_compet >= CURDATE();
+        c.date_compet >= CURDATE()
     ORDER BY 
         c.date_compet, c.heure_compet
     ";

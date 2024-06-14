@@ -1,5 +1,5 @@
 <?php
-    include '../connection/connection.php';
+    include_once("../connection/connection.php");
 
     // Vérifier si la méthode de requête est POST
     if ($_SERVER["REQUEST_METHOD"] == "POST") 

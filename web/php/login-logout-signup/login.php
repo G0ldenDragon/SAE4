@@ -1,12 +1,10 @@
 <?php
-    // Inclure le fichier de connexion à la base de données
-    require_once '../connection/connection.php';
+    require_once("../header-footer/header.php");
 
     // Vérifier si les données ont été soumises
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
     {
         // Récupérer et nettoyer les données du formulaire
-        // Utiliser filter_input() pour une meilleure pratique de sécurité
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
@@ -48,11 +46,11 @@
             echo "Aucun compte trouvé avec cet email";
             exit;
         }
-    } 
+    }
     else 
     {
         // Gérer le cas où la méthode n'est pas POST
-        echo  "Demande invalide";
+        echo "Demande invalide";
         exit;
     }
 
