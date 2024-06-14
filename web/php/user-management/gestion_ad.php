@@ -5,7 +5,7 @@
     
 
     // Inclure le fichier d'en-tête
-    require_once("../header-footer/header.php");
+    include_once("../header-footer/header.php");
 
     // Définir la limite d'affichage d'utilisateurs par page
     $limit = 10; // Nombre d'utilisateurs par page
@@ -108,5 +108,5 @@
 </html>
 
 <?php
-    require_once("../header-footer/footer.php");
+    include_once("../header-footer/footer.php");
 ?>

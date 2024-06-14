@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    require_once("../connection/connection.php");
+    include_once("../connection/connection.php");
 ?>
 
 <!DOCTYPE html>

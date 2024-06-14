@@ -3,7 +3,7 @@
     
 
     // Inclure l'en-tête de la page
-    require_once("../header-footer/header.php");
+    include_once("../header-footer/header.php");
 
     // Initialisation de la variable pour éviter l'erreur undefined
     $evenements = [];
@@ -109,5 +109,5 @@
 </html>
 
 <?php
-    require_once("../header-footer/footer.php");
+    include_once("../header-footer/footer.php");
 ?>

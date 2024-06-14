@@ -3,7 +3,7 @@
     
 
     // Inclure l'en-tête de la page
-    require_once("../header-footer/header.php");
+    include_once("../header-footer/header.php");
 
     // Vérifier si le formulaire a été soumis (méthode POST)
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
@@ -79,5 +79,5 @@
 </html>
 
 <?php
-    require_once("../header-footer/footer.php");
+    include_once("../header-footer/footer.php");
 ?>

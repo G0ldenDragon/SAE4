@@ -1,7 +1,7 @@
 <?php
 
     // Inclure le fichier d'en-tête
-    require_once("../header-footer/header.php");
+    include_once("../header-footer/header.php");
 
     // Vérifier si la requête est de type POST et si l'action 'delete_participant' est définie dans la variable POST
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['action'] == 'delete_participant' && isset($_POST['selected_participant'], $_POST['selected_tournament'])) 
@@ -337,5 +337,5 @@
 </html>
 
 <?php
-    require_once("../header-footer/footer.php");
+    include_once("../header-footer/footer.php");
 ?>

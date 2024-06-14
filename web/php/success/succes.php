@@ -1,5 +1,5 @@
 <?php
-    require_once("../header-footer/header.php");
+    include_once("../header-footer/header.php");
     
     if (!isset($_SESSION['success_message'])) 
     {

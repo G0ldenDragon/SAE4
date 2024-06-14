@@ -1,5 +1,5 @@
 <?php
-    require_once("../header-footer/header.php");
+    include_once("../header-footer/header.php");
      // Ce fichier doit retourner l'objet PDO $pdo
 
     // Vérifier si l'utilisateur est connecté, sinon rediriger vers la page de connexion
@@ -86,5 +86,5 @@
 </html>
 
 <?php
-    require_once("../header-footer/footer.php");
+    include_once("../header-footer/footer.php");
 ?>

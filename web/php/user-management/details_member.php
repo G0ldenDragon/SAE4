@@ -5,7 +5,7 @@
     
 
     // Inclure le fichier d'en-tête du site
-    require_once("../header-footer/header.php");
+    include_once("../header-footer/header.php");
 
     // Récupérer l'ID de l'utilisateur à partir de la requête GET (ou 0 par défaut);
     $userId = $_GET['user_id'] ?? 0;

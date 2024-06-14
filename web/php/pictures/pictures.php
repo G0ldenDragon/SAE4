@@ -1,5 +1,5 @@
 <?php
-    require_once("../header-footer/header.php");
+    include_once("../header-footer/header.php");
     
 
     // Récupérer tous les fichiers image du dossier
@@ -26,5 +26,5 @@
 </html>
 
 <?php
-    require_once("../header-footer/footer.php");
+    include_once("../header-footer/footer.php");
 ?>

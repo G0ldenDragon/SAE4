@@ -1,5 +1,5 @@
 <?php
-    require_once("../header-footer/header.php");
+    include_once("../header-footer/header.php");
 ?>
 
 <!DOCTYPE html>
@@ -38,5 +38,5 @@
 </html>
 
 <?php
-    require_once("../header-footer/footer.php");
+    include_once("../header-footer/footer.php");
 ?>

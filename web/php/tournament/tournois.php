@@ -2,7 +2,7 @@
     //  pour gérer les sessions utilisateur
 
     // Inclure le fichier d'en-tête du site
-    require_once("../header-footer/header.php");
+    include_once("../header-footer/header.php");
 
     // Vérifier si l'utilisateur est connecté
     if (isset($_SESSION['user_id'])) 
@@ -255,5 +255,5 @@
 </html>
 
 <?php
-    require_once("../header-footer/footer.php");
+    include_once("../header-footer/footer.php");
 ?>
