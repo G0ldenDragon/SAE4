@@ -1,6 +1,6 @@
 <?php
-// Démarrer la session et inclure la connexion à la base de données
-session_start();
+ et inclure la connexion à la base de données
+
 include '../connection/connection.php';
 
 // Vérifier si la méthode de requête est POST
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $member = 1;
     $admin = 0;
 
-    // Gestion de l'image de profil (profile_picture)
+    // Gestion de l'image de profil (profile_picture);
     if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] == 0) {
         // Récupération des informations sur le fichier
         $fileName = $_FILES['profile_picture']['name'];
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         fclose($fp);
     }
 
-    // Gestion du certificat médical (medical_certificate)
+    // Gestion du certificat médical (medical_certificate);
     $medical_certificate_blob = null;
 
     if (isset($_FILES['medical_certificate']) && $_FILES['medical_certificate']['error'] == 0) {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,7 @@
             <li><a href="../partenaires/partenaires.php">Nos Partenaires</a></li>
         </ul>
         <p>&copy; <script>
-                document.write(new Date().getFullYear())
+                document.write(new Date().getFullYear());
             </script> Vosges Karting Club. Tous droits réservés.</p>
     </div>
 </body>

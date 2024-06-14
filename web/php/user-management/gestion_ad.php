@@ -1,17 +1,17 @@
 <?php
-// Démarrer la session pour gérer les sessions utilisateur
-session_start();
+//  pour gérer les sessions utilisateur
+
 
 // Inclure le fichier de connexion à la base de données
-require '../connection/connection.php';
+require_once("../connection/connection.php");
 
 // Inclure le fichier d'en-tête
-require('../header-footer/header.php');
+require_once("../header-footer/header.php");
 
 // Définir la limite d'affichage d'utilisateurs par page
 $limit = 10; // Nombre d'utilisateurs par page
 
-// Récupérer le numéro de page actuel à partir de la requête GET (ou 1 par défaut)
+// Récupérer le numéro de page actuel à partir de la requête GET (ou 1 par défaut);
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
 // Calculer l'offset (décalage) pour la requête
@@ -33,7 +33,7 @@ $members = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -57,7 +57,6 @@ $members = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <nav aria-label="Page navigation">
             <ul class="pagination">
-                <!-- Previous Page Link -->
                 <?php if ($page > 1) : ?>
                     <li class="page-item">
                         <a class="page-link" href="?page=<?= $page - 1; ?>" aria-label="Previous">
@@ -71,7 +70,6 @@ $members = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </li>
                 <?php endfor; ?>
 
-                <!-- Next Page Link -->
                 <?php if ($page < $totalPages) : ?>
                     <li class="page-item">
                         <a class="page-link" href="?page=<?= $page + 1; ?>" aria-label="Next">
@@ -106,5 +104,5 @@ $members = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </html>
 <?php
-require('../header-footer/footer.php');
+require_once("../header-footer/footer.php");
 ?>

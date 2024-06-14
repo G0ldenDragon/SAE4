@@ -1,12 +1,12 @@
 <?php
-// Démarrer la session pour gérer les sessions utilisateur
-session_start();
+ pour gérer les sessions utilisateur
+
 
 // Inclure le fichier de connexion à la base de données
 require_once '../connection/connection.php';
 
 // Inclure le fichier d'en-tête du site
-require('../header-footer/header.php');
+require_once("../header-footer/header.php");
 
 // Vérifier si l'utilisateur est connecté
 if (isset($_SESSION['user_id'])) {
@@ -119,7 +119,7 @@ $competitions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -249,5 +249,5 @@ $competitions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </html>
 
 <?php
-require('../header-footer/footer.php');
+require_once("../header-footer/footer.php");
 ?>

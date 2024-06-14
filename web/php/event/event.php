@@ -1,12 +1,10 @@
 <?php
-// Démarrer la session
-session_start();
 
 // Inclure le fichier de connexion à la base de données
-require_once '../connection/connection.php';
+require_once("../connection/connection.php");
 
 // Inclure l'en-tête de la page
-require('../header-footer/header.php');
+require_once("../header-footer/header.php");
 
 // Initialisation de la variable pour éviter l'erreur undefined
 $evenements = [];
@@ -59,7 +57,7 @@ if (isset($_SESSION['user_id'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -107,5 +105,5 @@ if (isset($_SESSION['user_id'])) {
 
 
 <?php
-require('../header-footer/footer.php');
+require_once("../header-footer/footer.php");
 ?>
