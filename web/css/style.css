@@ -1,0 +1,1236 @@
+/* Styles globaux pour tous les éléments */
+* {
+    font-family: "Montserrat";
+}
+
+/* Styles pour le corps de la page */
+body {
+    background-color: #AAACA1;
+    margin: 0;
+    padding: 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Masquer la barre de défilement pour les navigateurs spécifiques */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Styles pour l'en-tête de la page */
+.header {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 20px;
+    background-color: #050507;
+    color: white;
+    z-index: 2;
+    width: 98.5%;
+    top: 0;
+}
+
+/* Styles pour le logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Styles pour le logo dans l'en-tête */
+.header-logo {
+    height: 70px;
+    vertical-align: middle;
+}
+
+/* Styles pour le bouton de navigation */
+.nav-toggle {
+    display: none;
+    font-size: 20px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Styles pour la liste de navigation */
+.nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+/* Styles pour les éléments de la liste de navigation */
+.nav li {
+    margin-left: 20px;
+}
+
+/* Styles pour les liens de navigation */
+.nav a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    overflow: hidden;
+    transition: color 0.3s;
+}
+
+/* Styles pour les indicateurs de soulignement des liens au survol */
+.nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background-color: #E3311D;
+    transition: transform 0.3s;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+}
+
+/* Styles pour les indicateurs de soulignement des liens au survol */
+.nav a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Styles pour les écrans de petite taille */
+@media screen and (max-width: 768px) {
+    /* Afficher le bouton de navigation sur les écrans de petite taille */
+    .nav-toggle {
+        display: block;
+    }
+
+    /* Masquer la liste de navigation par défaut et afficher en mode colonne */
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #050507;
+        flex-direction: column;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Styles pour les éléments de la liste de navigation en mode mobile */
+    .nav li {
+        margin: 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Styles pour les liens de navigation en mode mobile */
+    .nav a {
+        padding: 10px 20px;
+        display: block;
+    }
+
+    /* Afficher la liste de navigation en mode mobile lorsqu'elle est active */
+    .nav.is-active {
+        display: flex;
+    }
+}
+
+/* Styles pour un carrousel d'images */
+.carousel {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Styles pour les images dans le carrousel */
+.carousel-images {
+    display: flex;
+    transition: transform 1s ease;
+}
+
+/* Styles pour les images individuelles dans le carrousel */
+.carousel-images img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+/* Styles pour les boutons de navigation précédent et suivant dans le carrousel */
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.24);
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+/* Styles pour les boutons de navigation au survol */
+.prev:hover,
+.next:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+/* Styles spécifiques pour les boutons de navigation en mode mobile */
+@media screen and (max-width: 768px) {
+    .prev,
+    .next {
+        font-size: 18px;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Styles pour les pop-ups de connexion et d'inscription */
+.login-popup,
+.signup-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.445);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Styles pour les contenus des pop-ups de connexion et d'inscription */
+.login-content,
+.signup-content {
+    background: rgba(255, 255, 255, 0.205);
+    padding: 20px;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.signup-content h2,
+.login-content h2 {
+    text-align: center;
+}
+
+/* Styles pour différents conteneurs de contenu */
+.container {
+    width: 80%;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 200px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Style pour la section d'informations du profil */
+.profile-info {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; 
+}
+
+/* Style pour la photo de profil */
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 20px auto;
+    display: block;
+}
+
+/* Style pour les paragraphes dans la section d'informations du profil */
+.profile-info p {
+    font-size: 18px; /* Taille de police */
+    margin: 10px 0; /* Marge extérieure (haut et bas) */
+}
+
+/* Style pour le bouton de déconnexion */
+.logout-button {
+    background-color: #050507; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    padding: 10px 20px; /* Remplissage */
+    border-radius: 5px; /* Bordure arrondie */
+    text-decoration: none; /* Pas de soulignement du texte */
+    font-size: 18px; /* Taille de police */
+    display: inline-block; /* Élément en ligne */
+    transition: background-color 0.3s; /* Transition au survol */
+}
+
+/* Style au survol du bouton de déconnexion */
+.logout-button:hover {
+    background-color: #E3311D; /* Couleur de fond au survol */
+}
+
+.login-form .form-group,
+.signup-form .form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+
+.login-form .form-group label,
+.signup-form .form-group label {
+    flex-basis: 30%;
+    flex-shrink: 0; 
+    text-align: left;
+}
+
+.login-form .form-group input,
+.signup-form .form-group input,
+.form-group select {
+    flex-grow: 1;
+    margin-left: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form button,
+.signup-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #0000004b;
+    color: white;
+    cursor: pointer;
+}
+
+.login-form button:hover,
+.signup-form button:hover {
+    background-color: #050507;
+    transition: 0.3s;
+}
+
+/* Style pour les éléments dans les médias queries à 768px ou moins */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Largeur de la boîte */
+        margin-top: 20px; /* Marge extérieure en haut */
+    }
+}
+
+/* Style pour les éléments dans les médias queries à 600px ou moins */
+@media (max-width: 600px) {
+
+    .login-form .form-group,
+    .signup-form .form-group {
+        flex-direction: column; /* Disposition en colonnes */
+        width: 100%; /* Largeur maximale */
+    }
+
+    .login-form .form-group label,
+    .signup-form .form-group label {
+        flex-basis: auto; /* Largeur de base automatique */
+        margin-bottom: 5px; /* Marge extérieure en bas */
+    }
+
+    .login-form .form-group input,
+    .signup-form .form-group input {
+        margin-left: 0; /* Marge à gauche */
+        width: 100%; /* Largeur maximale */
+    }
+}
+
+/* Style pour la barre de défilement WebKit */
+::-webkit-scrollbar {
+    width: 12px; /* Largeur de la barre de défilement */
+}
+
+/* Style pour la piste de la barre de défilement WebKit */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Couleur de fond */
+    border-radius: 10px; /* Bordure arrondie */
+}
+
+/* Style pour le pouce de la barre de défilement WebKit */
+::-webkit-scrollbar-thumb {
+    background: #888; /* Couleur du pouce */
+    border-radius: 10px; /* Bordure arrondie */
+    border: 3px solid #f1f1f1; /* Bordure */
+}
+
+/* Style au survol du pouce de la barre de défilement WebKit */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Couleur du pouce au survol */
+}
+
+/* Style pour la barre de défilement générique */
+* {
+    scrollbar-width: thin; /* Largeur de la barre de défilement générique */
+    scrollbar-color: #888 #f1f1f1; /* Couleur de la barre de défilement générique */
+}
+
+/* Style pour le titre de niveau 1 (h1) */
+h1 {
+    color: #333; /* Couleur du texte */
+    text-align: center; /* Alignement au centre */
+    margin-top: 120px; /* Marge extérieure en haut */
+}
+
+/* Style pour le formulaire de compétition */
+.competition-form {
+    background-color: #fff; /* Couleur de fond */
+    max-width: 1500px; /* Largeur maximale */
+    margin: 20px auto; /* Marge extérieure */
+    padding: 20px; /* Espace intérieur */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre */
+    border-radius: 8px; /* Bordure arrondie */
+}
+
+/* Style pour les éléments div dans le formulaire de compétition */
+.competition-form div {
+    margin-bottom: 15px; /* Marge extérieure en bas */
+}
+
+/* Style pour les étiquettes dans le formulaire de compétition */
+.competition-form label {
+    display: block; /* Affichage en bloc */
+    margin-bottom: 5px; /* Marge extérieure en bas */
+    color: #050507; /* Couleur du texte */
+    font-weight: bold; /* Gras */
+}
+
+/* Style pour les champs de texte, date, heure et nombre dans le formulaire de compétition */
+.competition-form input[type="text"],
+.competition-form input[type="date"],
+.competition-form input[type="time"],
+.competition-form input[type="number"] {
+    width: calc(100% - 20px); /* Largeur du champ de texte */
+    padding: 10px; /* Remplissage */
+    margin-bottom: 10px; /* Marge extérieure en bas */
+    border-radius: 4px; /* Bordure arrondie */
+    border: 1px solid #ddd; /* Bordure */
+    font-size: 16px; /* Taille de police */
+}
+
+/* Style pour le bouton dans le formulaire de compétition */
+.competition-form button {
+    width: 100%; /* Largeur maximale */
+    padding: 10px; /* Remplissage */
+    border: none; /* Pas de bordure */
+    background-color: #050507; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border-radius: 4px; /* Bordure arrondie */
+    cursor: pointer; /* Curseur de souris */
+    font-size: 18px; /* Taille de police */
+    transition: background-color 0.3s; /* Transition au survol */
+}
+
+/* Style au survol du bouton dans le formulaire de compétition */
+.competition-form button:hover {
+    background-color: #E3311D; /* Couleur de fond au survol */
+}
+
+/* Style pour le bouton "Participer" */
+.participate-button {
+    width: 100%; /* Largeur maximale */
+    padding: 10px; /* Remplissage */
+    border: none; /* Pas de bordure */
+    background-color: #050507; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border-radius: 4px; /* Bordure arrondie */
+    cursor: pointer; /* Curseur de souris */
+    font-size: 18px; /* Taille de police */
+    transition: background-color 0.3s; /* Transition au survol */
+}
+
+/* Style au survol du bouton "Participer" */
+.participate-button:hover {
+    background-color: #E3311D; /* Couleur de fond au survol */
+}
+
+/* Style pour les éléments de la liste de compétition */
+.competition-item {
+    background: #ffffff; /* Couleur de fond */
+    padding: 15px; /* Espace intérieur */
+    margin-bottom: 10px; /* Marge extérieure en bas */
+    border-radius: 8px; /* Bordure arrondie */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre */
+}
+
+/* Style pour le titre de niveau 2 (h2) dans les éléments de la liste de compétition */
+.competition-item h2 {
+    color: #050507; /* Couleur du texte */
+    margin-bottom: 5px; /* Marge extérieure en bas */
+}
+
+/* Style pour les paragraphes dans les éléments de la liste de compétition */
+.competition-item p {
+    color: #333; /* Couleur du texte */
+    margin-bottom: 4px; /* Marge extérieure en bas */
+}
+
+/* Style pour la liste d'inscription */
+.inscription-list {
+    margin: 20px auto; /* Marge extérieure */
+    max-width: 1500px; /* Largeur maximale */
+    padding: 20px; /* Espace intérieur */
+    background-color: #fff; /* Couleur de fond */
+    border-radius: 8px; /* Bordure arrondie */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre */
+}
+
+/* Style pour le titre de niveau 2 (h2) dans la liste d'inscription */
+.inscription-list h2 {
+    text-align: center; /* Alignement au centre */
+    color: #333; /* Couleur du texte */
+    font-size: 24px; /* Taille de police */
+    margin-bottom: 20px; /* Marge extérieure en bas */
+}
+
+/* Style pour les éléments de la liste d'inscription */
+.inscription-item {
+    padding: 15px; /* Espace intérieur */
+    margin-bottom: 15px; /* Marge extérieure en bas */
+    border: 1px solid #ddd; /* Bordure */
+    border-radius: 4px; /* Bordure arrondie */
+    background-color: #f8f8f8; /* Couleur de fond */
+    transition: box-shadow 0.3s ease-in-out; /* Transition */
+}
+
+/* Style au survol des éléments de la liste d'inscription */
+.inscription-item:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ombre au survol */
+}
+
+/* Style pour le titre de niveau 3 (h3) dans les éléments de la liste d'inscription */
+.inscription-item h3 {
+    color: #555; /* Couleur du texte */
+    font-size: 20px; /* Taille de police */
+    margin-top: 0; /* Marge extérieure en haut */
+    margin-bottom: 10px; /* Marge extérieure en bas */
+}
+
+/* Style pour les paragraphes dans les éléments de la liste d'inscription */
+.inscription-item p {
+    color: #666; /* Couleur du texte */
+    font-size: 16px; /* Taille de police */
+    line-height: 1.5; /* Hauteur de ligne */
+    margin: 4px 0; /* Marge extérieure (haut et bas) */
+}
+
+/* Style pour les boutons "Confirmer" et "Refuser" */
+.confirm-button,
+.refuse-button {
+    background-color: #050507; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    padding: 10px 20px; /* Remplissage */
+    border-radius: 4px; /* Bordure arrondie */
+    cursor: pointer; /* Curseur de souris */
+    font-weight: bold; /* Gras */
+    text-transform: uppercase; /* Texte en majuscules */
+    transition: background-color 0.2s ease-in-out; /* Transition */
+}
+
+/* Style au survol du bouton "Refuser" */
+.refuse-button:hover {
+    background-color: #E3311D; /* Couleur de fond au survol */
+}
+
+/* Style au survol du bouton "Confirmer" */
+.confirm-button:hover {
+    background-color: green; /* Couleur de fond au survol */
+}
+
+/* Style pour les boutons désactivés */
+button:disabled {
+    background-color: #ccc; /* Couleur de fond désactivée */
+    cursor: not-allowed; /* Curseur non autorisé */
+    color: #555; /* Couleur du texte désactivée */
+}
+
+/* Style au survol des boutons désactivés */
+button:disabled:hover {
+    background-color: #ccc; /* Couleur de fond désactivée au survol */
+    cursor: not-allowed; /* Curseur non autorisé */
+    color: #555; /* Couleur du texte désactivée */
+}
+
+/* Style pour le bouton "Voir" */
+.see-button {
+    width: 100%; /* Largeur maximale */
+    padding: 10px; /* Remplissage */
+    border: none; /* Pas de bordure */
+    background-color: #050507; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    border-radius: 4px; /* Bordure arrondie */
+    cursor: pointer; /* Curseur de souris */
+    font-size: 18px; /* Taille de police */
+    transition: background-color 0.3s; /* Transition au survol */
+}
+
+/* Style au survol du bouton "Voir" */
+.see-button:hover {
+    background-color: #E3311D; /* Couleur de fond au survol */
+}
+
+/* Style pour les éléments avec la classe "wait-confirm" et "is-full" */
+.wait-confirm,
+.is-full {
+    text-align: center; /* Alignement au centre */
+}
+
+/* Style pour la liste des tournois */
+.tournois-list {
+    max-width: 1500px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    margin-top: 150px;
+}
+
+/* Commentaire pour la section de l'en-tête des tournois */
+.tournois-list h2 {
+    text-align: center;
+}
+
+/* Commentaire pour les éléments de la liste des tournois */
+.tournois-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Commentaire pour le dernier élément de la liste des tournois */
+.tournois-item:last-child {
+    border-bottom: none;
+}
+
+/* Commentaire pour le titre des tournois */
+.tournois-item h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* Commentaire pour le texte des tournois */
+.tournois-item p {
+    margin: 5px 0;
+    color: #666;
+}
+
+/* Commentaire pour l'en-tête des tournois */
+.tournois-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Commentaire pour le titre de l'en-tête des tournois */
+.tournois-header h3 {
+    margin: 0;
+}
+
+/* Commentaire pour le bouton de bascule des détails */
+.toggle-details {
+    cursor: pointer;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Commentaire pour la section des détails des tournois */
+.tournois-details {
+    padding-top: 10px;
+}
+
+/* Commentaire pour les nouvelles sections de tournois et d'événements */
+.new-tournois,
+.new-event {
+    max-width:1500px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 200px;
+}
+
+/* Commentaire pour le titre des nouvelles sections de tournois et d'événements */
+.new-tournois h1,
+.new-event h1 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Commentaire pour les sélecteurs dans les nouvelles sections */
+.new-tournois select,
+.new-event select {
+    width: 97%;
+}
+
+/* Commentaire pour les champs de texte et les zones de texte dans la section d'événements */
+.new-event input[type="text"],
+.new-event input[type="date"],
+.new-event input[type="number"],
+.new-event textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Commentaire pour le bouton dans la section d'événements */
+.new-event button {
+    width: 100%;
+    padding: 10px;
+    background-color: #050507;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+/* Commentaire pour le survol du bouton dans la section d'événements */
+.new-event button:hover {
+    background-color: #E3311D;
+}
+
+/* Commentaire pour le conteneur des événements */
+.events-container {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    border-radius: 8px;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-top: 150px;
+}
+
+/* Style pour la classe .event */
+.event {
+    border-bottom: 1px solid #eee; /* Bordure inférieure d'un pixel solide gris clair */
+    padding-bottom: 15px; /* Espacement en bas de 15 pixels */
+    margin-bottom: 15px; /* Marge en bas de 15 pixels */
+}
+
+/* Style pour le dernier élément avec la classe .event */
+.event:last-child {
+    border-bottom: none; /* Aucune bordure inférieure pour le dernier élément */
+}
+
+/* Style pour les titres h2 à l'intérieur de la classe .event */
+.event h2 {
+    color: #050507; /* Couleur du texte en noir foncé */
+    font-size: 20px; /* Taille de police de 20 pixels */
+    margin-top: 0; /* Aucune marge supérieure */
+}
+
+/* Style pour les paragraphes à l'intérieur de la classe .event */
+.event p {
+    color: #333; /* Couleur du texte en gris foncé */
+    margin: 5px 0 15px 0; /* Marge : 5 pixels en haut, 0 à droite, 15 en bas, 0 à gauche */
+}
+
+/* Style pour les boutons à l'intérieur de la classe .event */
+.event button {
+    background-color: #050507; /* Couleur de fond en noir foncé */
+    color: #fff; /* Couleur du texte en blanc */
+    padding: 10px 15px; /* Remplissage de 10 pixels en haut/bas et 15 pixels à gauche/droite */
+    border: none; /* Aucune bordure */
+    border-radius: 4px; /* Coins arrondis de 4 pixels */
+    cursor: pointer; /* Curseur de type pointeur */
+    transition: background-color 0.3s; /* Transition de la couleur de fond pendant 0,3 seconde */
+}
+
+/* Style pour les boutons lorsqu'ils sont survolés */
+.event button:hover {
+    background-color: #E3311D; /* Changement de couleur de fond lors du survol */
+}
+
+/* Style pour les éléments avec la classe .niveau */
+.niveau {
+    display: block; /* Affichage en tant que bloc */
+    width: 100%; /* Largeur de 100% */
+    padding: 8px 10px; /* Remplissage de 8 pixels en haut/bas et 10 pixels à gauche/droite */
+    margin-bottom: 10px; /* Marge en bas de 10 pixels */
+    font-size: 16px; /* Taille de police de 16 pixels */
+    font-family: Arial, sans-serif; /* Police Arial ou sans-serif par défaut */
+    border: 1px solid #ccc; /* Bordure de 1 pixel solide en gris clair */
+    border-radius: 4px; /* Coins arrondis de 4 pixels */
+    box-sizing: border-box; /* La taille totale inclut les bordures et les rembourrages */
+    background-color: #ffffff; /* Couleur de fond blanche */
+    cursor: pointer; /* Curseur de type pointeur */
+    -webkit-appearance: none; /* Désactivation de l'apparence par défaut sur les navigateurs WebKit */
+    -moz-appearance: none; /* Désactivation de l'apparence par défaut sur les navigateurs Mozilla */
+    appearance: none; /* Désactivation de l'apparence par défaut */
+    position: relative; /* Position relative par rapport à son emplacement initial */
+}
+
+/* Style pour le pseudo-élément ::after à l'intérieur de la classe .niveau */
+.niveau::after {
+    content: '\25BC'; /* Contenu du pseudo-élément (un triangle pointant vers le bas) */
+    position: absolute; /* Position absolue par rapport à son conteneur relatif */
+    top: 50%; /* Décalage de 50% vers le haut par rapport au conteneur parent */
+    right: 10px; /* Décalage de 10 pixels depuis la droite */
+    transform: translateY(-50%); /* Translation vers le haut de 50% pour centrer verticalement */
+    pointer-events: none; /* Événements de pointeur désactivés pour le pseudo-élément */
+    font-size: 12px; /* Taille de police de 12 pixels */
+    color: #888; /* Couleur du texte en gris clair */
+}
+
+/* Style pour le pseudo-élément ::after lorsqu'il est survolé */
+.niveau:hover::after {
+    color: #555; /* Changement de couleur du texte lors du survol */
+}
+
+/* Style pour les éléments .niveau lorsqu'ils sont en focus */
+.niveau:focus {
+    outline: none; /* Suppression de la mise en évidence par défaut du focus */
+    border-color: #007BFF; /* Couleur de la bordure en bleu lorsque l'élément est en focus */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Ombre sur la bordure en focus */
+}
+
+/* Style pour la classe .delete-user */
+.delete-user {
+    background-color: #f9f9f9; /* Couleur de fond gris clair */
+    max-width: 1500px; /* Largeur maximale de 1500 pixels */
+    margin: auto; /* Centrage horizontal */
+    padding: 20px; /* Remplissage de 20 pixels */
+    border-radius: 8px; /* Coins arrondis de 8 pixels */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    margin-bottom: 20px; /* Marge en bas de 20 pixels */
+}
+
+/* Style pour les formulaires à l'intérieur de la classe .delete-user */
+.delete-user form {
+    margin-bottom: 20px; /* Marge en bas de 20 pixels */
+}
+
+/* Style pour les menus déroulants (select) à l'intérieur de la classe .delete-user */
+.delete-user select {
+    width: 100%; /* Largeur de 100% */
+    padding: 10px; /* Remplissage de 10 pixels */
+    margin-bottom: 10px; /* Marge en bas de 10 pixels */
+    border: 1px solid #ddd; /* Bordure de 1 pixel solide en gris clair */
+    border-radius: 4px; /* Coins arrondis de 4 pixels */
+    background-color: white; /* Couleur de fond blanche */
+}
+
+/* Style pour les boutons d'envoi (submit) et les boutons à l'intérieur de la classe .delete-user */
+.delete-user input[type="submit"],
+.delete-user button {
+    background-color: #050507; /* Couleur de fond en noir foncé */
+    color: white; /* Couleur du texte en blanc */
+    padding: 10px 15px; /* Remplissage de 10 pixels en haut/bas et 15 pixels à gauche/droite */
+    border: none; /* Aucune bordure */
+    border-radius: 4px; /* Coins arrondis de 4 pixels */
+    cursor: pointer; /* Curseur de type pointeur */
+    transition: background-color 0.3s; /* Transition de la couleur de fond pendant 0,3 seconde */
+}
+
+/* Style pour les boutons d'envoi (submit) et les boutons lorsqu'ils sont survolés */
+.delete-user input[type="submit"]:hover,
+.delete-user button:hover {
+    background-color: #E3311D; /* Changement de couleur de fond lors du survol */
+}
+
+/* Style pour les champs de nombre (input[type="number"]) à l'intérieur de la classe .delete-user */
+.delete-user input[type="number"] {
+    width: 100%; /* Largeur de 100% */
+    padding: 10px; /* Remplissage de 10 pixels */
+    margin-bottom: 10px; /* Marge en bas de 10 pixels */
+    border: 1px solid #ddd; /* Bordure de 1 pixel solide en gris clair */
+    border-radius: 4px; /* Coins arrondis de 4 pixels */
+    background-color: white; /* Couleur de fond blanche */
+}
+
+/* Style pour la classe .members-list */
+.members-list {
+    display: flex; /* Affichage en tant que flexbox */
+    flex-wrap: wrap; /* Permet de revenir à la ligne lorsque l'espace est insuffisant */
+    justify-content: space-around; /* Espacement équilibré des éléments autour de l'espace disponible */
+    gap: 20px; /* Espacement de 20 pixels entre les éléments */
+}
+
+/* Style pour la classe .member */
+.member {
+    flex: 0 1 18%; /* Flexibilité de 0, base de 1, largeur de 18% */
+    text-align: center; /* Centrage du texte */
+}
+
+/* Style pour la classe .pagination */
+.pagination {
+    display: flex; /* Affichage en tant que flexbox */
+    list-style-type: none; /* Suppression de la liste à puces */
+    padding: 0; /* Suppression du rembourrage */
+    justify-content: center; /* Centrage horizontal */
+    gap: 10px; /* Espacement de 10 pixels entre les éléments */
+}
+
+/* Style pour les liens (a) à l'intérieur de la classe .pagination */
+.pagination li a {
+    text-decoration: none; /* Suppression du soulignement des liens */
+    padding: 5px 10px; /* Remplissage de 5 pixels en haut/bas et 10 pixels à gauche/droite */
+    border: 1px solid #000; /* Bordure de 1 pixel solide en noir */
+    color: #000; /* Couleur du texte en noir */
+}
+
+/* Style pour les liens (a) actifs à l'intérieur de la classe .pagination */
+.pagination li.active a {
+    background-color: #000; /* Couleur de fond en noir */
+    color: #fff; /* Couleur du texte en blanc */
+}
+
+/* Style pour la classe .form-group-ad */
+.form-group-ad {
+    margin-bottom: 15px; /* Marge en bas de 15 pixels */
+}
+
+/* Style pour les libellés (label) à l'intérieur de la classe .form-group */
+.form-group label {
+    display: block; /* Affichage en tant que bloc */
+    font-weight: bold; /* Police en gras */
+    margin-bottom: 5px; /* Marge en bas de 5 pixels */
+}
+
+/* Style pour les champs de texte (input[type="text"]) et les champs d'e-mail (input[type="email"]) à l'intérieur de la classe .form-group-ad */
+.form-group-ad input[type="text"],
+.form-group-ad input[type="email"] {
+    width: 100%; /* Largeur de 100% */
+    padding: 8px; /* Remplissage de 8 pixels */
+    border: 1px solid #ddd; /* Bordure de 1 pixel solide en gris clair */
+    border-radius: 4px; /* Coins arrondis de 4 pixels */
+}
+
+/* Style pour les actions de formulaire à l'intérieur de la classe .form-actions */
+.form-actions {
+    text-align: right; /* Alignement du texte à droite */
+}
+
+/* Style pour les boutons de soumission de formulaire à l'intérieur de la classe .form-actions */
+.form-actions input[type="submit"] {
+    padding: 10px 20px; /* Remplissage de 10 pixels en haut/bas et 20 pixels à gauche/droite */
+    color: #fff; /* Couleur du texte en blanc */
+    border: none; /* Aucune bordure */
+    border-radius: 4px; /* Coins arrondis de 4 pixels */
+    cursor: pointer; /* Curseur de type pointeur */
+    font-size: 16px; /* Taille de police de 16 pixels */
+}
+
+/* Style pour le premier bouton de soumission de formulaire à l'intérieur de la classe .form-actions */
+.form-actions input[type="submit"]:nth-child(1) {
+    background-color: #4CAF50; /* Couleur de fond verte */
+    margin-right: 10px; /* Marge à droite de 10 pixels */
+}
+
+/* Style pour le deuxième bouton de soumission de formulaire à l'intérieur de la classe .form-actions */
+.form-actions input[type="submit"]:nth-child(2) {
+    background-color: #f44336; /* Couleur de fond rouge */
+}
+
+/* Style pour l'élément avec l'ID #niveau */
+#niveau {
+    display: block; /* Affichage en tant que bloc */
+    width: 100%; /* Largeur de 100% */
+    padding: 0.5rem 0.75rem; /* Remplissage de 0,5 rem en haut/bas et 0,75 rem à gauche/droite */
+    border: 1px solid #ccc; /* Bordure de 1 pixel solide en gris clair */
+    border-radius: 4px; /* Coins arrondis de 4 pixels */
+    background-color: white; /* Couleur de fond blanche */
+    -webkit-appearance: none; /* Désactivation de l'apparence par défaut sur les navigateurs WebKit */
+    -moz-appearance: none; /* Désactivation de l'apparence par défaut sur les navigateurs Mozilla */
+    appearance: none; /* Désactivation de l'apparence par défaut */
+}
+
+/* Style pour l'élément avec l'ID #niveau lorsqu'il est en focus */
+#niveau:focus {
+    outline: none;
+    border-color: #050507;
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.26);
+}
+
+/* Style pour la classe .footer */
+.footer {
+    background-color: #050507; /* Couleur de fond noir foncé */
+    color: #f1f1f1; /* Couleur du texte en blanc */
+    font-size: 0.9em; /* Taille de police de 0,9 em (équivalent à 90% de la taille de police par défaut) */
+    text-align: center; /* Centrage du texte */
+    padding: 10px 0; /* Remplissage de 10 pixels en haut/bas et 0 à gauche/droite */
+    left: 0; /* Position à gauche de l'élément parent */
+    bottom: 0; /* Position en bas de l'élément parent */
+    width: 100%; /* Largeur de 100% */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Ombre en dessous de l'élément */
+}
+
+/* Style pour les liens (a) à l'intérieur de la classe .footer */
+.footer a {
+    color: #d1d1d1; /* Couleur du texte en gris clair */
+    text-decoration: none; /* Suppression du soulignement des liens */
+    margin: 0 15px; /* Marge de 0 pixels en haut/bas et 15 pixels à gauche/droite */
+}
+
+/* Style pour les liens (a) lorsqu'ils sont survolés */
+.footer a:hover {
+    color: #ffffff; /* Changement de couleur du texte en blanc lors du survol */
+    text-decoration: underline; /* Soulignement des liens lors du survol */
+}
+
+/* Style pour la liste (ul) à l'intérieur de la classe .footer */
+.footer li {
+    list-style: none; /* Suppression des puces de liste */
+    display: inline; /* Affichage en ligne des éléments de liste */
+}
+
+/* Style pour la classe .cgu-page */
+.cgu-page, .legal-notice-page {
+    background-color: white; /* Couleur de fond blanche */
+    max-width: 800px; /* Largeur maximale de 800 pixels */
+    margin: auto; /* Centrage horizontal */
+    margin-top: 150px; /* Marge en haut de 150 pixels */
+    margin-bottom: 150px; /* Marge en bas de 150 pixels */
+    padding: 20px; /* Remplissage de 20 pixels */
+    border: 1px solid #ccc; /* Bordure de 1 pixel solide en gris clair */
+    border-radius: 4px; /* Coins arrondis de 4 pixels */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Style pour les tableaux (table) */
+table {
+    width: 100%; /* Largeur de 100% */
+    border-collapse: collapse; /* Fusion des bordures de tableau */
+    margin: 20px 0; /* Marge de 20 pixels en haut/bas et 0 à gauche/droite */
+}
+
+/* Style pour les en-têtes de tableau (th) */
+th {
+    background-color: #f2f2f2; /* Couleur de fond gris clair */
+    font-weight: bold; /* Police en gras */
+    text-align: left; /* Alignement du texte à gauche */
+    padding: 10px; /* Remplissage de 10 pixels */
+}
+
+/* Style pour les lignes de tableau impaires (tr:nth-child(odd)) */
+tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Couleur de fond gris clair pour les lignes impaires */
+}
+
+/* Style pour les cellules de tableau (td) */
+td {
+    padding: 10px; /* Remplissage de 10 pixels */
+    border-bottom: 1px solid #ddd; /* Bordure inférieure de 1 pixel solide en gris clair */
+}
+
+/* Style pour les lignes de tableau lorsqu'elles sont survolées */
+tr:hover {
+    background-color: #e0e0e0; /* Changement de couleur de fond en gris plus foncé lors du survol */
+}
+
+/* Style pour la classe .medic */
+.medic {
+    margin-top: 200px; /* Marge en haut de 200 pixels */
+}
+
+/* Style pour la classe .karting-rules-container */
+.karting-rules-container {
+    background-color: #ffffff; /* Couleur de fond blanche */
+    padding: 20px; /* Remplissage de 20 pixels */
+    margin: 20px auto; /* Marge de 20 pixels en haut/bas et automatique à gauche/droite */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    border-radius: 8px; /* Coins arrondis de 8 pixels */
+    max-width: 1400px; /* Largeur maximale de 1400 pixels */
+    margin-top: 200px; /* Marge en haut de 200 pixels */
+}
+
+/* Style pour les images à l'intérieur de la classe .karting-image */
+.karting-image {
+    width: 100%; /* Largeur de 100% */
+    height: auto; /* Hauteur automatique */
+    border-radius: 4px; /* Coins arrondis de 4 pixels */
+    margin-bottom: 20px; /* Marge en bas de 20 pixels */
+}
+
+/* Style pour le titre h1 à l'intérieur de la classe .karting-rules-container */
+.karting-rules-container h1 {
+    text-align: center; /* Centrage du texte */
+    color: #333; /* Couleur du texte en gris foncé */
+    margin-bottom: 20px; /* Marge en bas de 20 pixels */
+}
+
+/* Style pour les paragraphes (p) à l'intérieur de la classe .karting-rules-container */
+.karting-rules-container p {
+    text-align: justify; /* Justification du texte */
+    color: #666; /* Couleur du texte en gris */
+}
+
+/* Style pour la classe .gallery */
+.gallery {
+    display: flex; /* Affichage en tant que flexbox */
+    flex-wrap: wrap; /* Permet de revenir à la ligne lorsque l'espace est insuffisant */
+    justify-content: center; /* Espacement équilibré des éléments autour de l'espace disponible */
+    gap: 10px; /* Espacement de 10 pixels entre les éléments */
+}
+
+/* Style pour la classe .gallery-container */
+.gallery-container {
+    display: grid; /* Affichage en tant que grille */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Répétition automatique des colonnes avec une largeur minimale de 250 pixels et une largeur flexible de 1 fraction */
+    grid-gap: 10px; /* Espacement de 10 pixels entre les éléments de la grille */
+    padding: 10px; /* Remplissage de 10 pixels */
+    background-color: #f2f2f2; /* Couleur de fond gris clair */
+    border-radius: 5px; /* Coins arrondis de 5 pixels */
+    max-width: 1200px; /* Largeur maximale de 1200 pixels */
+    margin: auto; /* Centrage horizontal */
+    margin-bottom: 50px; /* Marge en bas de 50 pixels */
+}
+
+/* Style pour les images à l'intérieur de la classe .gallery-container */
+.gallery-container img {
+    width: 100%; /* Largeur de 100% */
+    height: auto; /* Hauteur automatique */
+    border-radius: 5px; /* Coins arrondis de 5 pixels */
+    cursor: pointer; /* Curseur de type pointeur */
+    transition: transform 0.3s ease; /* Transition de transformation avec une durée de 0,3 seconde et une accélération */
+}
+
+/* Style pour les images à l'intérieur de la classe .gallery-container lorsqu'elles sont survolées */
+.gallery-container img:hover {
+    transform: scale(1.05); /* Zoom de 105% lors du survol */
+    opacity: 0.7; /* Réduction de l'opacité à 70% lors du survol */
+}
+
+/* Style pour la classe .gallery-title */
+.gallery-title {
+    margin-top: 150px; /* Marge en haut de 150 pixels */
+    text-align: center; /* Centrage du texte */
+    font-size: 24px; /* Taille de police de 24 pixels */
+    color: #333; /* Couleur du texte en gris foncé */
+    padding: 20px; /* Remplissage de 20 pixels */
+}
+
+/* Style pour la classe .modal */
+.modal {
+    display: none; /* Masquer l'élément par défaut */
+    position: fixed; /* Position fixe */
+    z-index: 1000; /* Indice de position z élevé pour apparaître au-dessus des autres éléments */
+    padding-top: 100px; /* Remplissage de 100 pixels en haut */
+    left: 0; /* Position à gauche de l'élément parent */
+    right: 0; /* Position à droite de l'élément parent */
+    top: 0; /* Position en haut de l'élément parent */
+    bottom: 0; /* Position en bas de l'élément parent */
+    background-color: rgba(0,0,0,0.9); /* Couleur de fond semi-transparente noire */
+    overflow: auto; /* Activation du défilement si le contenu dépasse la fenêtre modale */
+}
+
+/* Style pour le contenu de la modal */
+.modal-content {
+    margin: auto; /* Centrage horizontal */
+    display: block; /* Affichage en tant que bloc */
+    width: 80%; /* Largeur de 80% */
+    max-width: 700px; /* Largeur maximale de 700 pixels */
+}
+
+/* Style pour le bouton de fermeture (X) de la modal */
+.close {
+    position: absolute; /* Position absolue */
+    top: 15px; /* Position en haut de 15 pixels */
+    right: 35px; /* Position à droite de 35 pixels */
+    color: #f1f1f1; /* Couleur du texte en blanc */
+    font-size: 40px; /* Taille de police de 40 pixels */
+    font-weight: bold; /* Police en gras */
+    cursor: pointer; /* Curseur de type pointeur */
+}
+
+/* Style pour la classe .form-container */
+.form-container {
+    margin-top: 150px; /* Marge en haut de 150 pixels */
+    padding: 20px; /* Remplissage de 20 pixels */
+    background-color: #fff; /* Couleur de fond blanche */
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Ombre légère */
+    border-radius: 8px; /* Coins arrondis de 8 pixels */
+    max-width: 1500px; /* Largeur maximale de 1500 pixels */
+    margin-left: auto; /* Centrage horizontal */
+    margin-right: auto; /* Centrage horizontal */
+    margin-bottom: 50px; /* Marge en bas de 50 pixels */
+}
+
+/* Style pour les champs de formulaire (input et textarea) à l'intérieur de la classe .form-field */
+.form-field {
+    margin-bottom: 15px; /* Marge en bas de 15 pixels */
+}
+
+/* Style pour les libellés (label) à l'intérieur de la classe .form-field */
+.form-field label {
+    display: block; /* Affichage en tant que bloc */
+    margin-bottom: 5px; /* Marge en bas de 5 pixels */
+}
+
+/* Style pour les champs de texte (input) et les champs de texte multilignes (textarea) à l'intérieur de la classe .form-field */
+.form-field input,
+.form-field textarea {
+    width: 100%; /* Largeur de 100% */
+    padding: 10px; /* Remplissage de 10 pixels */
+    border: 1px solid #ccc; /* Bordure de 1 pixel solide en gris clair */
+    border-radius: 4px; /* Coins arrondis de 4 pixels */
+}
+
+/* Style pour les boutons de formulaire à l'intérieur de la classe .form-field */
+.form-field button {
+    width: 100%; /* Largeur de 100% */
+    padding: 10px; /* Remplissage de 10 pixels */
+    border: none; /* Aucune bordure */
+    background-color: #050507; /* Couleur de fond noir foncé */
+    color: white; /* Couleur du texte en blanc */
+    border-radius: 4px; /* Coins arrondis de 4 pixels */
+    cursor: pointer; /* Curseur de type pointeur */
+}
+
+/* Style pour les boutons de formulaire lorsqu'ils sont survolés */
+.form-field button:hover {
+    background-color: #E3311D; /* Changement de couleur de fond lors du survol en rouge */
+}
+
+/* Style pour la première classe de partenaire .partenaire1 */
+.partenaire.partenaire1 {
+    margin-top:150px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+/* Style pour la première classe de partenaire .partenaire2 */
+.partenaire.partenaire2 {
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+/* Style pour la première classe de partenaire .partenaire3 */
+.partenaire.partenaire3 {
+    background-color: #d8d8d8;
+    border: 1px solid #bbb;
+    padding: 20px;
+}
