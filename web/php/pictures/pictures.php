@@ -6,6 +6,7 @@
     $directoryPath = '../../images/uploads/';
     $images = glob($directoryPath . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
