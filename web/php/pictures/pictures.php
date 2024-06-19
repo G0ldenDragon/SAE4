@@ -18,7 +18,7 @@
         <div class="gallery-title">Galerie de photos</div>
         <div class="gallery-container">
             <?php foreach ($images as $image) : ?>
-                <img src="<?php echo htmlspecialchars($image); ?>" alt="<?php echo htmlspecialchars(pathinfo($image, PATHINFO_FILENAME)); ?>" onclick="openModal(this.src, this.alt)">
+                <img src="<?php echo htmlspecialchars($image) ?>" alt="<?php echo htmlspecialchars(pathinfo($image, PATHINFO_BASENAME)); ?>" onclick="openModal(this.src, this.alt)">
             <?php endforeach; ?>
         </div>
         <script defer src="../../js/largerImage.js"></script>

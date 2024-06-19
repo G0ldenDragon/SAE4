@@ -9,6 +9,10 @@ modal.appendChild(modalImg);
 
 // Crée un élément div pour afficher le texte de la légende de l'image
 var captionText = document.createElement('div');
+captionText.classList.add('captionText');
+captionText.style.color = "white";
+captionText.style.alignItems = "center";
+captionText.style.textAlign = "center";
 modal.appendChild(captionText);
 
 // Crée un bouton de fermeture

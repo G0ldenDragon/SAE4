@@ -2,9 +2,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Récupère les éléments HTML nécessaires par leur ID
     var loginPopup = document.getElementById("loginPopup");
-    var signupPopup = document.getElementById("signupPopup");
     var openLogin = document.getElementById("openPopup");
+
+    var signupPopup = document.getElementById("signupPopup");
     var switchToSignup = document.getElementById("switchToSignup");
+    
     var closeLogin = document.querySelector(".login-popup .close");
     var closeSignup = document.querySelector(".signup-popup .close");
 
